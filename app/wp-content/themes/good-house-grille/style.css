@@ -1054,6 +1054,21 @@ body{
 	.menu-grid a span{
 		line-height:3em;
 	}
-
-
 }
+
+.news-article {
+	border-bottom: 1px solid black;
+	margin: 20px 0;
+}
+
+.news-article h2 {
+	font-size: 1.6em;
+	margin-bottom: 7px;
+}
+
+.news-article time {
+	display: block;
+	font-weight: bold;
+	padding: 0 0 15px 0;
+}
+
