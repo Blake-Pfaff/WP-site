@@ -11,24 +11,24 @@
 
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'good-house-grille' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'good-house-grille' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'good-house-grille' ), 'good-house-grille', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+		 </div>
+		 <!---End-content---->
+		 <!---start-footer---->
+		 <div class="footer">
+		<div class="wrap">
+			<?php dynamic_sidebar( 'footer-widget' ); ?>
+			<div class="clear"> </div>
+		</div>
+		<div class="clear"> </div>
+	</div>
+	<div class="copy-right">
+		<div class="top-to-page">
+						<a href="#top" class="scroll"> </a>
+						<div class="clear"> </div>
+					</div>
+		<p>Design by <a href="http://w3layouts.com/"> W3layouts</a></p>
+	</div>
+		 <!---End-footer---->
 
 <?php wp_footer(); ?>
 

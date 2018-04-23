@@ -114,6 +114,17 @@ function good_house_grille_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widgets', 'good-house-grille' ),
+		'id'            => 'footer-widget',
+		'description'   => esc_html__( 'these wedigts show up in the footer.', 'good-house-grille' ),
+		'before_widget' => '<div id="%1$s" class="footer-grid %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
 add_action( 'widgets_init', 'good_house_grille_widgets_init' );
 
 /**

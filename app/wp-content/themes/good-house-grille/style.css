@@ -1,3 +1,4 @@
+ˆ
 /*!
 Theme Name: Good House Grille
 Theme URI: http://underscores.me/
@@ -392,7 +393,7 @@ body{
 .footer-grid ul li{
 	display:block;
 }
-.center-grid a{
+.widget_recent_entries a{
 	background: none;
 	padding: 0px;
 	color:#C2C2C2;
@@ -400,13 +401,13 @@ body{
 	border-bottom: 1px ridge rgba(192, 192, 192, 0.13);
 	padding: 0px 0px 9px 0px;
 }
-.center-grid{
+.widget_recent_entries {
 	width:20%;
 }
-.center-grid a:hover{
+.widget_recent_entries a:hover{
 	background:none;
 }
-.center-grid ul{
+.widget_recent_entries ul{
 	margin-top:5px;
 }
 .twitts p label{

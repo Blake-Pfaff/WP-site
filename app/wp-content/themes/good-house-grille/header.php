@@ -28,13 +28,13 @@
 		     <div class="wrap">
 				<div class="top-header">
 					<div class="logo">
-						<a href="index.html"><img src="images/logo.png" title="logo" /></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" title="<?php bloginfo('name'); ?>" /></a>
 					</div>
 					<div class="social-icons">
 						<ul>
-							<li><a href="#"><img src="images/facebook.png" title="facebook" /></a></li>
-							<li><a href="#"><img src="images/twitter.png" title="twitter" /></a></li>
-							<li><a href="#"><img src="images/google.png" title="google pluse" /></a></li>
+							<li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook.png" title="facebook" /></a></li>
+							<li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/twitter.png" title="twitter" /></a></li>
+							<li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/google.png" title="google pluse" /></a></li>
 						</ul>
 					</div>
 					<div class="clear"> </div>
@@ -51,15 +51,13 @@
 						</ul>
 					</div>
 					<div class="top-nav-right">
-						<form>
-							<input type="text"><input type="submit" value="" />
-						</form>
+						<?php get_search_form(); ?>
 					</div>
 					<div class="clear"> </div>
 				</div>
 				<!---End-top-nav---->
 			</div>
 		</div>
-	   <!----End-header----->
+	   <!----End-header---->
 
-<div id="content" class="site-content">
+<div class="content"></div>
