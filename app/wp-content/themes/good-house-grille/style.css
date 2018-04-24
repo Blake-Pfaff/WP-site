@@ -42,7 +42,7 @@ a{text-decoration:none;}
 .vertical-top{	vertical-align:top;}/* vertical align top */
 nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
-img{max-width:100%;}
+img{max-width:100%; height: auto;}
 /*end reset*/
 body{
 	background:#F1EDE4;
@@ -260,19 +260,20 @@ body{
 
 
 /*-----bottom-grids----*/
-.bottom-grid1 {
+.bottom-grid {
 	width: 30%;
 	float:left;
 	margin-right: 3%;
 }
-.bottom-last {
+.bottom-grid:last-child
+ {
 	margin-right:0;
 }
 .bottom-grids{
 	font-family: 'Open Sans', sans-serif;
 	padding: 2em 0 3em 0;
 }
-.bottom-grid1 h3,.bottom-grid2 h3{
+.bottom-grid h3,.bottom-grid h3{
 	color:#aa8036;
 	font-family: 'Open Sans', sans-serif;
 	font-size:1.5em;
@@ -281,19 +282,19 @@ body{
 	margin-bottom: 13px;
 	text-transform: uppercase;
 }
-.bottom-grid1 span,.bottom-grid2 span{
+.bottom-grid span,.bottom-grid span{
 	color: #BD7F1C;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
-.bottom-grid1 p,.bottom-grid2 p{
+.bottom-grid p,.bottom-grid p{
 	font-size: 0.875em;
 	color:#816943;
 	line-height: 1.6em;
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 8px 0px 10px 0px;
 }
-.bottom-grid1 ul li a{
+.bottom-grid ul li a{
 	display:block;
 	color: #816943;
 	font-family: Arial, Helvetica, sans-serif;
@@ -304,7 +305,9 @@ body{
 	-o-transition: 0.5s ease;
 	-webkit-transition: 0.5s ease;
 }
-.bottom-grid1 ul li a:hover{
+.bottom-grid
+
+ ul li a:hover{
 	color:#BD7F1C;
 }
 .bottom-grid-fristlink{
@@ -321,26 +324,26 @@ body{
 .bottom-grid-fristlink:hover{
 	color:#000;
 }
-.bottom-grid2 ul li{
+.bottom-grid ul li{
 	display: inline-block;
 	width:46%;
 	padding:0px 5px;
 }
-.bottom-grid2 {
+.bottom-grid {
 	float: left;
 	width: 33%;
 	margin-right: 3%;
 }
-.bottom-mid span{
+.bottom-grid:nth-child(2) span{
 	color:#BD7F1C;
 }
-.bottom-mid a{
+.bottom-grid:nth-child(2) a{
 	background:#BD7F1C;
 }
-.bottom-last a{
+.bottom-grid:last-child a{
 	background:#BD7F1C;
 }
-.bottom-last span{
+.bottom-grid:last-child span{
 	color:#BD7F1C;
 }
 .menu li a img{
@@ -908,10 +911,10 @@ body{
 	.wrap{
 		width:90%;
 	}
-	.bottom-grid2 ul li {
+	.bottom-grid ul li {
 		width: 45.5%;
 	}
-	.bottom-grid2 ul li{
+	.bottom-grid ul li{
 		padding:8px 5px;
 	}
 	.menu-grid a span{
@@ -928,7 +931,7 @@ body{
 	.wrap{
 		width:95%;
 	}
-	.bottom-grid2 ul li{
+	.bottom-grid ul li{
 		width:44.5%;
 	}
 	.menu-grid {
@@ -952,7 +955,7 @@ body{
 	.mid-grid{
 		padding:1em 0;
 	}
-	.bottom-grid1,.bottom-grid2{
+	.bottom-grid,.bottom-grid{
 		width:94%;
 		padding:3%;
 		margin-right:0;
@@ -960,7 +963,7 @@ body{
 	.bottom-grids{
 		padding:0;
 	}
-	.bottom-grid1 h3, .bottom-grid2 h3{
+	.bottom-grid h3, .bottom-grid h3{
 		padding:0;
 	}
 	.footer{

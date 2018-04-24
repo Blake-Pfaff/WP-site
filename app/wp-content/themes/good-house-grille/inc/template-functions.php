@@ -35,3 +35,40 @@ function good_house_grille_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'good_house_grille_pingback_header' );
+
+/** Home page box**/
+
+add_action( 'cmb2_admin_init', 'good_house_grille_metaboxes' );
+
+function good_house_grille_home_metaboxes() {
+	$cmb = new_cmb2_box( array(
+		'id'			=> 'grille_home_metabox',
+		'title'			=> __( 'Home Top Information', 'cmb2' ),
+		'object_types'  => array( 'page' ),
+		'context'		=> 'normal',
+		'priority'		=> 'high',
+		'show_names'   	=> true,
+) );
+
+$cmb->add_field( array(
+	'name' 		=> __( 'Box Title', 'cmb2' ),
+	'desc'		=> __( '', 'cmb2' ),
+	'id'		=> 'home_grid_box_title',
+	'type'		=> 'text',
+) );
+
+$cmb->add_field( array(
+	'name' 		=> __( 'Box Content', 'cmb2' ),
+	'desc'		=> __( '', 'cmb2' ),
+	'id'		=> 'home_grid_box_content',
+	'type'		=> 'wysiwyg',
+) );
+
+$cmb->add_field( array(
+	'name' 		=> __( 'Box Read More link', 'cmb2' ),
+	'desc'		=> __( '', 'cmb2' ),
+	'id'		=> 'home_grid_box_link',
+	'type'		=> 'text_url',
+) );
+
+}

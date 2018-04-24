@@ -59,5 +59,13 @@
 			</div>
 		</div>
 	   <!----End-header---->
-
+	   <?php if (is_page_template( 'page-home.php' ) ) : ?>
+	    <div class="slider">
+	    	<?php if ( has_post_thumbnail() ) :
+	    		the_post_thumbnail();
+	    	else : ?>
+	   			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/slider1.jpg" />
+	   		<?php endif; ?>
+	   </div>
+		<?php endif; ?>
 <div class="content"></div>
