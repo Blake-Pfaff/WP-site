@@ -632,7 +632,7 @@ body{
 	background: #363638;
 	color: #FFF;
 }
-.grid2{
+.grid{
 	margin: 0px 35px;
 }
 .menu-grids {
@@ -920,7 +920,7 @@ body{
 	.menu-grid a span{
 		line-height:3em;
 	}
-	.grid2 {
+	.grid {
 		margin: 0px 34px;
 	}
 	.menu-grid {
@@ -1017,7 +1017,7 @@ body{
 		width:94%;
 		padding:3%;
 	}
-	.grid2{
+	.grid{
 		margin:0;
 	}
 	.menus h3{

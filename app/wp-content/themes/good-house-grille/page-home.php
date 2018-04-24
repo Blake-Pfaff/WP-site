@@ -3,33 +3,35 @@
   *Template Name: Home
 */
 
-get_header();?>
+get_header();
+
+    $home_boxes = get_post_meta(get_the_ID(), 'grille_home_box', true);
+
+?>
+
 
     <div class="top-grids">
         <div class="wrap">
-            <div class="top-grid">
-                <a href="#"><img src="images/icon1.png" title="icon-name"></a>
-                <h3>Sucess Story</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <a class="button" href="about.html">Read More</a>
+            <?php
+                $icon_id = 1;
+                $last_class = '';
+                foreach( $home_boxes as $box => $info ) :
+                    if( 3 == $icon_id) {
+                        $last_class = 'last-topgrid';
+                    }
+                ?>
+            <div class="top-grid <?php echo $last_class ?>">
+                <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon<?php echo $icon_id; ?>.png" title="icon-name"></a>
+                <h3><?php echo $info['title']; ?></h3>
+                <p><?php echo $info['content']; ?></p>
+                <a class="button" href="<?php $info['url']; ?>">Read More</a>
             </div>
-            <div class="top-grid">
-                <a href="#"><img src="images/icon2.png" title="icon-name"></a>
-                <h3>Our Menu</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-                <a class="button" href="menu.html">Read More</a>
-            </div>
-            <div class="top-grid last-topgrid">
-                <a href="#"><img src="images/icon3.png" title="icon-name"></a>
-                <h3>Location</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <a class="button" href="contact.html">Read More</a>
-            </div>
+             <?php $icon_id = $icon_id + 1 ?>
+        <?php endforeach; ?>
             <div class="clear"> </div>
         </div>
     </div>
-
-<div class="mid-grid" >
+    <div class="mid-grid" >
      <div class="warp">
         <?php
             if ( have_posts() ) {

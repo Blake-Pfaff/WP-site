@@ -38,7 +38,7 @@ add_action( 'wp_head', 'good_house_grille_pingback_header' );
 
 /** Home page box**/
 
-add_action( 'cmb2_admin_init', 'good_house_grille_metaboxes' );
+
 
 function good_house_grille_home_metaboxes() {
 	$cmb = new_cmb2_box( array(
@@ -50,25 +50,35 @@ function good_house_grille_home_metaboxes() {
 		'show_names'   	=> true,
 ) );
 
-$cmb->add_field( array(
-	'name' 		=> __( 'Box Title', 'cmb2' ),
-	'desc'		=> __( '', 'cmb2' ),
-	'id'		=> 'home_grid_box_title',
-	'type'		=> 'text',
-) );
+	$group_field_id = $cmb->add_field( array(
+		'id'          => 'grille_home_box',
+		'type'        => 'group',
+		'description' => __( '', 'cmb2' ),
+		'options'     => array(
+			'group_title'   => __( 'Box {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+			'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+			'remove_button' => __( 'Remove Entry', 'cmb2' ),
+			'sortable'      => true, // beta
+		),
+	) );
 
-$cmb->add_field( array(
-	'name' 		=> __( 'Box Content', 'cmb2' ),
-	'desc'		=> __( '', 'cmb2' ),
-	'id'		=> 'home_grid_box_content',
-	'type'		=> 'wysiwyg',
-) );
+	$cmb->add_group_field( $group_field_id, array(
+		'name' => 'Box Title',
+		'id'   => 'title',
+		'type' => 'text',
+	) );
 
-$cmb->add_field( array(
-	'name' 		=> __( 'Box Read More link', 'cmb2' ),
-	'desc'		=> __( '', 'cmb2' ),
-	'id'		=> 'home_grid_box_link',
-	'type'		=> 'text_url',
-) );
+	$cmb->add_group_field( $group_field_id, array(
+		'name' => 'Box Content',
+		'id'   => 'content',
+		'type' => 'wysiwyg',
+	) );
+
+	$cmb->add_group_field( $group_field_id, array(
+		'name' => 'Box Link',
+		'id'   => 'url',
+		'type' => 'text_url',
+	) );
 
 }
+add_action( 'cmb2_admin_init', 'good_house_grille_home_metaboxes' );
